@@ -9,49 +9,58 @@
   </head>
   <body>
     <header>
-      <a href="#" class="logo"><img src="img/logo-revou.png" alt="" /></a>
-      <ul class="navlist">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Our Profile</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#blog">Message Us</a></li>
-      </ul>
+      <a href="#" class="logo">
+        <img src="img/logo-revou.png" alt="" />
+      </a>
+      <nav>
+        <ul class="navlist">
+          <li><a href="#home">Home</a></li>
+          <li><a href="profile.html">Our Profile</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#message-us">Message Us</a></li>
+        </ul>
+      </nav>
     </header>
     <section class="home" id="home">
-      <div id="hero" class="hero-text">
-        <h1>Hi, <span id="nama"></span> Welcome to Website</h1>
-        <h2>Ini adalah website latihan pertama</h2>
+      <div class="hero-text">
+        <h1>Hi, <span id="nama"></span> Welcome to Our Website</h1>
+        <h2>This is our first practice website</h2>
       </div>
     </section>
 
-    <div id="headquarters">
+    <div class="headquarters" id="portfolio">
       <h1>Headquarters</h1>
       <div class="wrapper">
         <div class="hq-images-container">
-          <div class="hq-images"><img src="./img/logo-revou.png" /></div>
+          <div class="hq-images">
+            <img src="./img/logo-revou.png" alt="" />
+          </div>
           <p class="hq-images-p">Jakarta</p>
         </div>
         <div class="hq-images-container">
-          <div class="hq-images"><img src="./img/logo-revou.png" /></div>
+          <div class="hq-images">
+            <img src="./img/logo-revou.png" alt="" />
+          </div>
           <p class="hq-images-p">Surabaya</p>
         </div>
         <div class="hq-images-container">
-          <div class="hq-images"><img src="./img/logo-revou.png" /></div>
+          <div class="hq-images">
+            <img src="./img/logo-revou.png" alt="" />
+          </div>
           <p class="hq-images-p">Bandung</p>
         </div>
       </div>
     </div>
-
     <h1>Message Us</h1>
+
     <div id="message-us">
-      <form id="messageform" name="message-form" onsubmit="return validateForm()">
+      <form id="message-form" name="message-form" onsubmit="return validateForm()">
         <table>
           <tr>
             <td>Nama</td>
             <td>:</td>
             <td><input id="input-nama" type="text" name="nama" /></td>
           </tr>
-
           <tr>
             <td>Nomor Telepon</td>
             <td>:</td>
@@ -75,7 +84,7 @@
           <tr>
             <td>Pesan</td>
             <td>:</td>
-            <td><textarea id="input-pesan" type="textarea" name="pesan" rows="4" cols="auto"></textarea></td>
+            <td><textarea id="input-pesan" name="pesan" rows="4" cols="auto"></textarea></td>
           </tr>
         </table>
         <input type="submit" value="Kirim" id="kirim" />
@@ -89,13 +98,12 @@
           var gender = document.forms['message-form']['gender'].value;
           var pesan = document.forms['message-form']['pesan'].value;
 
-          var form = document.getElementById('messageform');
-          function handleForm(event) {
+          var form = document.getElementById('message-form');
+          form.addEventListener('submit', function (event) {
             event.preventDefault();
-          }
-          form.addEventListener('submit', handleForm);
+          });
 
-          if (name == '' || telp == '' || emailcust == '' || gender == '' || pesan == '') {
+          if (name === '' || telp === '' || emailcust === '' || gender === '' || pesan === '') {
             alert('Tidak boleh ada yang kosong');
             return false;
           }
@@ -116,7 +124,6 @@
             <td>:</td>
             <td><span id="nama2"></span></td>
           </tr>
-
           <tr>
             <td>Nomor Telepon</td>
             <td>:</td>
@@ -140,6 +147,7 @@
         </table>
       </div>
     </div>
+
     <footer>
       <p>With Love by Fayyad</p>
     </footer>
