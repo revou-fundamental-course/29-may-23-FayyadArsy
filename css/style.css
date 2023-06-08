@@ -165,7 +165,10 @@ header {
 .hq-images:hover {
   transform: scale(1.2);
 }
-
+.label {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
 #message-us {
   display: flex;
   justify-content: center;
@@ -195,7 +198,6 @@ textarea {
 }
 .form-output {
   border: 1px solid #000;
-
   margin-left: 20px;
   padding-right: 35em;
 }

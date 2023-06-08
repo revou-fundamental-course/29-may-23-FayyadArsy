@@ -115,10 +115,36 @@
           document.getElementById('pesan').innerText = pesan;
           return false;
         }
+        function getCurrentDateTime() {
+          var currentDateTime = new Date();
+          var year = currentDateTime.getFullYear();
+          var month = String(currentDateTime.getMonth() + 1).padStart(2, '0');
+          var day = String(currentDateTime.getDate()).padStart(2, '0');
+          var hours = String(currentDateTime.getHours()).padStart(2, '0');
+          var minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
+          var seconds = String(currentDateTime.getSeconds()).padStart(2, '0');
+          var formattedDateTime = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+          return formattedDateTime;
+        }
+
+        function updateDateTime() {
+          var currentDateTimeElement = document.getElementById('current-date-time');
+          currentDateTimeElement.textContent = getCurrentDateTime();
+        }
+
+        window.onload = function () {
+          updateDateTime();
+          setInterval(updateDateTime, 1000);
+        };
       </script>
 
       <div class="form-output">
         <table>
+          <tr>
+            <td class="label"><b>Current Time</b></td>
+            <td class="label">:</td>
+            <td class="label"><span id="current-date-time"></span></td>
+          </tr>
           <tr>
             <td>Nama</td>
             <td>:</td>
